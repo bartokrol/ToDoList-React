@@ -1,7 +1,5 @@
-export const HistoryPage = () => {
-    return (
-        <div>
-            {'HistoryPage'}
-        </div>
-    )
-}
+export const HistoryPage = () => (
+    <div>
+        {'HistoryPage'}
+    </div>
+);
