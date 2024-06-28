@@ -1,7 +1,5 @@
-export const SettingsPage = () => {
-    return (
-        <div>
-            {'SettingsPage'}
-        </div>
-    )
-}
+export const SettingsPage = () => (
+    <div>
+        {'SettingsPage'}
+    </div>
+);

@@ -1,7 +1,5 @@
-export const ToDoListPage = () => {
-    return (
-        <div>
-            {'ToDoListPage'}
-        </div>
-    )
-}
+export const ToDoListPage = () => (
+    <div>
+        {'ToDoListPage'}
+    </div>
+);

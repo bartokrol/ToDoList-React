@@ -1,4 +1,24 @@
 {
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
   "rules": {
     "arrow-body-style": "error",
     "no-empty": "error",
@@ -22,17 +42,6 @@
       "always"
     ],
     "semi": "error"
-  },
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "plugins": [
-    "@typescript-eslint",
-    "react"
-  ]
+  }
 }
 

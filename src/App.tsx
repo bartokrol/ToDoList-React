@@ -6,7 +6,7 @@ const App = () => {
     const app = '';
     return (
         <Layout>
-            <div className="App">
+            <div className='App'>
                 {'Test'}
             </div>
         </Layout>
