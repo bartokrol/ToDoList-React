@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Layout } from './layout/Layout';
+import { ROUTES } from './infrastructure/routing/constants';
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <div>Hello world!</div>,
-    },
-]);
+const router = createBrowserRouter(ROUTES.map(route => ({
+    path: route.path,
+    element: <route.component />,
+})));
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -17,7 +17,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <Layout>
+            <RouterProvider router={router} />
+        </Layout>
     </React.StrictMode>,
 );
 
