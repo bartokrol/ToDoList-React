@@ -1,16 +1,13 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.scss';
 import { Layout } from './layout/Layout';
 
-const App = () => {
-    const app = '';
-    return (
-        <Layout>
-            <div className='App'>
-                {'Test'}
-            </div>
-        </Layout>
-    );
-};
+const App = () => (
+    <Layout>
+        <div className={styles.app}>
+            {'Test'}
+        </div>
+    </Layout>
+);
 
 export default App;
