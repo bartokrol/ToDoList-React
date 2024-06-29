@@ -1,0 +1,17 @@
+@use '../../../../../../styles/mixins/buttons.module';
+
+.oops {
+  font-size: 6rem;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.text {
+  font-size: 2rem;
+  margin: .5rem 0;
+  font-style: italic;
+}
+
+.link {
+  @include buttons.button;
+}

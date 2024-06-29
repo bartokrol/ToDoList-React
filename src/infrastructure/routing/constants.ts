@@ -4,11 +4,13 @@ import { LoginPage } from '../../views/login/LoginPage';
 import { SettingsPage } from '../../views/settings/SettingsPage';
 import { ToDoListPage } from '../../views/toDoList/ToDoListPage';
 import { RegistrationPage } from '../../views/registration/RegistrationPage';
+import { ErrorPage } from './components/errorPage/ErrorPage';
 
 export const ROUTES = [
     {
         path: '/',
         component: MainPage,
+        errorElement: ErrorPage,
     },
     {
         path: '/history',
