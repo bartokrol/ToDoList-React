@@ -6,7 +6,11 @@ export const Navigation = () => {
 
     return (
         <div className={styles.nav}>
-            {'Nav'}
+            <div className={styles.title}>
+                {'ToDoList '}
+                <p className={styles.author}>{'by Bartosz Król'}</p>
+            </div>
+            <div>{'burger'}</div>
         </div>
     );
 };
