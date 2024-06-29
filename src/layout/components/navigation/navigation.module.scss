@@ -1,0 +1,9 @@
+@use '../../../styles/variables';
+
+.nav {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  box-shadow: 0 0 10px black;
+  height: variables.$nav-height;
+}
