@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './navigation.module.scss';
 import { Burger } from '../burger/Burger';
+import { Drawer } from '../../../components/drawer/Drawer';
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
     const handleBurgerClick = () => {
-        setIsOpen(prev => !prev);
+        setIsOpen(true);
+    };
+
+    const handleCloseDrawer = () => {
+        setIsOpen(false);
     };
 
     return (
@@ -16,6 +22,7 @@ export const Navigation = () => {
                 <p className={styles.author}>{'by Bartosz Król'}</p>
             </div>
             <Burger clickAction={handleBurgerClick} />
+            <Drawer isOpen={isOpen} dialogRef={dialogRef} closeAction={handleCloseDrawer} />
         </div>
     );
 };
