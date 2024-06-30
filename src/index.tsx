@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ROUTES } from './infrastructure/routing/constants';
+import { Layout } from './layout/Layout';
+
+const router = createBrowserRouter(ROUTES.map(route => ({
+    path: route.path,
+    element: <route.component />,
+    ...(route.errorElement && { errorElement: <route.errorElement /> }),
+})));
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
+
 root.render(
     <React.StrictMode>
-        <App />
+        <Layout>
+            <RouterProvider router={router} />
+        </Layout>
     </React.StrictMode>,
 );
 
