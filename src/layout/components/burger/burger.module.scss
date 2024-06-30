@@ -1,0 +1,24 @@
+
+.burger {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    transition: all .2s;
+    scale: 1.1;
+  }
+}
+
+.burgerLine {
+  box-sizing: border-box;
+  border: .1rem solid black;
+  width: 100%;
+}
