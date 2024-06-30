@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
-import { RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './layout/Layout';
-import { ROUTER } from './infrastructure/routing/router';
+import { ROUTES } from './infrastructure/routing/constants';
+import { ErrorPage } from './infrastructure/routing/components/errorPage/ErrorPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -12,9 +13,24 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <Layout>
-            <RouterProvider router={ROUTER} />
-        </Layout>
+        <BrowserRouter>
+            <Layout>
+                <Routes>
+                    {ROUTES.map(route => (
+                        <Route
+                            Component={route.component}
+                            path={route.path}
+                            key={route.path}
+                        />
+                    ))}
+                    <Route
+                        path={'*'}
+                        element={<ErrorPage />}
+                    />
+                </Routes>
+                {/*<RouterProvider router={ROUTER} />*/}
+            </Layout>
+        </BrowserRouter>
     </React.StrictMode>,
 );
 

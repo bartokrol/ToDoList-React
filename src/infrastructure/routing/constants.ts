@@ -4,32 +4,39 @@ import { LoginPage } from '../../views/login/LoginPage';
 import { SettingsPage } from '../../views/settings/SettingsPage';
 import { ToDoListPage } from '../../views/toDoList/ToDoListPage';
 import { RegistrationPage } from '../../views/registration/RegistrationPage';
-import { ErrorPage } from './components/errorPage/ErrorPage';
+
+export enum ROUTES_PATHS {
+  mainPage = '/',
+  historyPage = '/history',
+  loginPage = '/login',
+  settingsPage = '/settings',
+  toDoListPage = '/toDoList',
+  registrationPage = '/registration',
+}
 
 export const ROUTES = [
     {
-        path: '/',
+        path: ROUTES_PATHS.mainPage,
         component: MainPage,
-        errorElement: ErrorPage,
     },
     {
-        path: '/history',
+        path: ROUTES_PATHS.historyPage,
         component: HistoryPage,
     },
     {
-        path: '/login',
+        path: ROUTES_PATHS.loginPage,
         component: LoginPage,
     },
     {
-        path: '/settings',
+        path: ROUTES_PATHS.settingsPage,
         component: SettingsPage,
     },
     {
-        path: '/toDoList',
+        path: ROUTES_PATHS.toDoListPage,
         component: ToDoListPage,
     },
     {
-        path: '/registration',
+        path: ROUTES_PATHS.registrationPage,
         component: RegistrationPage,
     },
 ];
