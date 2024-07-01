@@ -19,11 +19,18 @@
   text-decoration: none;
   transition: scale .2s;
   margin: 0 0 .2rem;
+  padding: .2rem;
   border-bottom: 1px solid black;
 
   &:hover {
     scale: 1.1;
   }
+}
+
+.linkWrapper.activeLink {
+  background-color: rgba(#000, .2);
+  border-top-left-radius: .2rem;
+  border-top-right-radius: .2rem;
 }
 
 .img {
