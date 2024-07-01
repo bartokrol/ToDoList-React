@@ -1,6 +1,6 @@
 import { ROUTES_PATHS } from '../../../infrastructure/routing/constants';
-import loginIcon from '../../../public/svgs/login_icon.svg';
-import registrationIcon from '../../../public/svgs/registration_icon.svg';
+import signInIcon from '../../../public/svgs/signIn_icon.svg';
+import signUpIcon from '../../../public/svgs/signUp_icon.svg';
 import settingsIcon from '../../../public/svgs/settings_icon.svg';
 import historyIcon from '../../../public/svgs/history_icon.svg';
 import todoIcon from '../../../public/svgs/todo_icon.svg';
@@ -13,16 +13,16 @@ export const MENU_LINKS = [
         alt: 'ToDoList Image',
     },
     {
-        href: ROUTES_PATHS.loginPage,
-        text: 'login',
-        svg: loginIcon,
-        alt: 'Login Image',
+        href: ROUTES_PATHS.signInPage,
+        text: 'sign in',
+        svg: signInIcon,
+        alt: 'Sign In Image',
     },
     {
-        href: ROUTES_PATHS.registrationPage,
-        text: 'registration',
-        svg: registrationIcon,
-        alt: 'Registration Image',
+        href: ROUTES_PATHS.signUpPage,
+        text: 'sign up',
+        svg: signUpIcon,
+        alt: 'Sign Up Image',
     },
     {
         href: ROUTES_PATHS.historyPage,
