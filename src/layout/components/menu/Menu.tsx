@@ -8,7 +8,8 @@ export const Menu = () => (
     <div className={styles.container}>
         <div className={styles.links}>
             {MENU_LINKS.map(link => (
-                <NavLink className={({ isActive }) => `${styles.linkWrapper} ${isActive ? styles.activeLink : ''}`}
+                <NavLink key={link.href}
+                    className={({ isActive }) => `${styles.linkWrapper} ${isActive ? styles.activeLink : ''}`}
                     to={link.href}>
                     <img className={styles.img} src={link.svg} alt={link.alt} />
                     <p className={styles.linkText}>{link.text}</p>

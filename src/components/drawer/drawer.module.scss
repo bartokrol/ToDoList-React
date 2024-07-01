@@ -22,25 +22,36 @@
   height: 100%;
 }
 
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  padding: .2rem;
+}
+
 .closeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
-  border: .1rem solid black;
   width: 2rem;
   height: 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 50%;
   justify-self: end;
-  margin: .25rem .25rem 0 0;
   padding: 0;
+  border: none;
   cursor: pointer;
   transition: all .2s;
   opacity: .5;
+  grid-column: 2;
 
   &:hover {
     scale: 1.1;
     opacity: 1;
   }
+}
+
+.close {
+  width: 2rem;
+  height: 2rem;
 }
 
 .content {
