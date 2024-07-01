@@ -1,0 +1,50 @@
+@use '../../../styles/mixins/buttons';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkWrapper {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: center;
+  text-decoration: none;
+  transition: scale .2s;
+  margin: 0 0 .2rem;
+  padding: .2rem;
+  border-bottom: 1px solid black;
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.linkWrapper.activeLink {
+  background-color: rgba(#000, .2);
+  border-top-left-radius: .2rem;
+  border-top-right-radius: .2rem;
+}
+
+.img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.linkText {
+  text-align: right;
+  text-transform: uppercase;
+  font-style: italic;
+  color: black;
+}
+
+.homeButton {
+  @include buttons.button;
+}

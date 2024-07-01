@@ -5,12 +5,13 @@
   position: sticky;
   top: 0;
   width: 100vw;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 .5rem black;
   height: variables.$nav-height;
   padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
 }
 
 .title {
