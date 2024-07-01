@@ -1,17 +1,17 @@
 import { MainPage } from '../../views/main/MainPage';
 import { HistoryPage } from '../../views/history/HistoryPage';
-import { LoginPage } from '../../views/login/LoginPage';
+import { SignInPage } from '../../views/signIn/SignInPage';
 import { SettingsPage } from '../../views/settings/SettingsPage';
 import { ToDoListPage } from '../../views/toDoList/ToDoListPage';
-import { RegistrationPage } from '../../views/registration/RegistrationPage';
+import { SignUpPage } from '../../views/signUp/SignUpPage';
 
 export enum ROUTES_PATHS {
   mainPage = '/',
   historyPage = '/history',
-  loginPage = '/login',
+  signInPage = '/signIn',
   settingsPage = '/settings',
   toDoListPage = '/toDoList',
-  registrationPage = '/registration',
+  signUpPage = '/signUp',
 }
 
 export const ROUTES = [
@@ -24,8 +24,8 @@ export const ROUTES = [
         component: HistoryPage,
     },
     {
-        path: ROUTES_PATHS.loginPage,
-        component: LoginPage,
+        path: ROUTES_PATHS.signInPage,
+        component: SignInPage,
     },
     {
         path: ROUTES_PATHS.settingsPage,
@@ -36,7 +36,7 @@ export const ROUTES = [
         component: ToDoListPage,
     },
     {
-        path: ROUTES_PATHS.registrationPage,
-        component: RegistrationPage,
+        path: ROUTES_PATHS.signUpPage,
+        component: SignUpPage,
     },
 ];
