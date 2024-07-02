@@ -1,0 +1,16 @@
+.flagButton {
+  background-color: transparent;
+  border: none;
+  transition: scale .2s;
+  cursor: pointer;
+  padding-right: .2rem;
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.flag {
+  width: 2rem;
+  height: 2rem;
+}

@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import { ROUTES } from './infrastructure/routing/constants';
 import { ErrorPage } from './infrastructure/routing/components/errorPage/ErrorPage';
+import './infrastructure/translations/i18n';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
