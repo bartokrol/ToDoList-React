@@ -10,6 +10,7 @@ interface DrawerTypes {
 export type DrawerType = DrawerTypes;
 
 export interface useDrawerStateType {
+  closeAction: DrawerTypes['closeAction'];
   dialogRef: DrawerTypes['dialogRef'];
   isOpen: DrawerTypes['isOpen'];
 }

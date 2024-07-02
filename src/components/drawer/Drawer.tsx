@@ -5,7 +5,7 @@ import closeIcon from '../../public/svgs/close_icon.svg';
 import { HeaderFlags } from '../../infrastructure/translations/components/headerFlags/HeaderFlags';
 
 export const Drawer = ({ isOpen, children, dialogRef, closeAction }: DrawerType) => {
-    const isInitialized = useDrawerState({ isOpen, dialogRef });
+    const isInitialized = useDrawerState({ isOpen, dialogRef, closeAction });
 
     return (
         <dialog className={styles.drawer} ref={dialogRef} data-css-is-open={isInitialized}>
