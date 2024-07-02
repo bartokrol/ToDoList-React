@@ -3,8 +3,10 @@ import styles from './navigation.module.scss';
 import { Burger } from '../burger/Burger';
 import { Drawer } from '../../../components/drawer/Drawer';
 import { Menu } from '../menu/Menu';
+import { useTranslation } from 'react-i18next';
 
 export const Navigation = () => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -19,8 +21,8 @@ export const Navigation = () => {
     return (
         <div className={styles.nav}>
             <div className={styles.title}>
-                {'ToDoList '}
-                <p className={styles.author}>{'by Bartosz Król'}</p>
+                {t('navigation.toDoList')}
+                <p className={styles.author}>{t('navigation.author')}</p>
             </div>
             <Burger clickAction={handleBurgerClick} />
             <Drawer isOpen={isOpen} dialogRef={dialogRef} closeAction={handleCloseDrawer}>
