@@ -3,7 +3,10 @@ import { MutableRefObject, ReactNode } from 'react';
 interface DrawerTypes {
   dialogRef: MutableRefObject<HTMLDialogElement> | MutableRefObject<null>;
   closeAction: () => void;
-  children: ReactNode;
+  children: {
+    header: ReactNode;
+    content: ReactNode;
+  };
   isOpen: boolean;
 }
 

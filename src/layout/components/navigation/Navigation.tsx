@@ -4,6 +4,7 @@ import { Burger } from '../burger/Burger';
 import { Drawer } from '../../../components/drawer/Drawer';
 import { Menu } from '../menu/Menu';
 import { useTranslation } from 'react-i18next';
+import { HeaderFlags } from '../../../infrastructure/translations/components/headerFlags/HeaderFlags';
 
 export const Navigation = () => {
     const { t } = useTranslation();
@@ -26,7 +27,10 @@ export const Navigation = () => {
             </div>
             <Burger clickAction={handleBurgerClick} />
             <Drawer isOpen={isOpen} dialogRef={dialogRef} closeAction={handleCloseDrawer}>
-                <Menu />
+                {{
+                    header: <HeaderFlags />,
+                    content: <Menu />,
+                }}
             </Drawer>
         </div>
     );
