@@ -9,13 +9,13 @@ export const HeaderFlags = () => {
     };
 
     return (
-        <>
+        <div>
             <button className={styles.flagButton} onClick={() => handleLanguageChange('pl')}>
                 <img className={styles.flag} src={plIcon} alt={'PL flag'} />
             </button>
             <button className={styles.flagButton} onClick={() => handleLanguageChange('en')}>
                 <img className={styles.flag} src={enIcon} alt={'EN flag'} />
             </button>
-        </>
+        </div>
     );
 };
