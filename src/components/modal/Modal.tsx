@@ -12,7 +12,7 @@ const Modal = ({ id, root }: { id: number, root: Root }) => {
     }, []);
 
     const handleOpen = () => {
-        modal.renderModal();
+        modal.openModal();
     };
 
     const handleClose = () => {
@@ -45,18 +45,11 @@ class ModalService {
       this.rootsContainer = document.getElementById('modals') as HTMLDivElement;
   }
 
-  public renderModal() {
+  public openModal() {
       this.handleRootsContainer();
 
-      const rootElement = document.createElement('div');
-
-      rootElement.id = `modal_root_${this.modalStack}`;
-
-      this.rootsContainer.appendChild(rootElement);
-
-      const root = createRoot(rootElement);
-
-      root.render(<Modal root={root} id={this.modalStack} />);
+      const rootElement = this.createModalContainer();
+      this.renderModal(rootElement);
 
       this.modalStack++;
   }
@@ -66,9 +59,26 @@ class ModalService {
 
       this.modalStack--;
 
-      const rootElement = this.rootsContainer.querySelector(`#modal_root_${this.modalStack}`) as Element;
+      this.removeModalContainer();
+  }
 
+  private createModalContainer() {
+      const rootElement = document.createElement('div');
+      rootElement.id = `modal_root_${this.modalStack}`;
+
+      this.rootsContainer.appendChild(rootElement);
+
+      return rootElement;
+  }
+
+  private removeModalContainer() {
+      const rootElement = this.rootsContainer.querySelector(`#modal_root_${this.modalStack}`) as Element;
       this.rootsContainer.removeChild(rootElement);
+  }
+
+  private renderModal(rootElement: HTMLDivElement) {
+      const root = createRoot(rootElement);
+      root.render(<Modal root={root} id={this.modalStack} />);
   }
 
   private handleRootsContainer() {

@@ -6,7 +6,7 @@ export const ToDoListPage = () => {
     const listOfTodos: string[] = [];
 
     const handleClick = () => {
-        modal.renderModal();
+        modal.openModal();
     };
 
     return (
