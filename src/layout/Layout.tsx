@@ -8,5 +8,6 @@ export const Layout = ({ children }: { children: ReactNode }) => (
         <div className={styles.main}>
             {children}
         </div>
+        <div id={'modals'} />
     </div>
 );

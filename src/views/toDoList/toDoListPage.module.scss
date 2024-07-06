@@ -1,6 +1,16 @@
+@use '../../styles/mixins/buttons';
+
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   height: fit-content;
+  gap: 1em;
+  align-items: center;
+}
+
+.button {
+  @include buttons.button;
+  width: fit-content;
 }

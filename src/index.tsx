@@ -30,7 +30,6 @@ root.render(
                         element={<ErrorPage />}
                     />
                 </Routes>
-                {/*<RouterProvider router={ROUTER} />*/}
             </Layout>
         </BrowserRouter>
     </React.StrictMode>,
