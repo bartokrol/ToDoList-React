@@ -1,12 +1,17 @@
 import styles from './toDoListPage.module.scss';
 import { ToDoList } from './components/ToDoList/ToDoList';
-import { modal } from '../../components/modal/Modal';
+import { dialog } from '../../infrastructure/services/dialogService';
+import { ToDoListBox } from './components/ToDoListBox/ToDoListBox';
 
 export const ToDoListPage = () => {
     const listOfTodos: string[] = [];
 
     const handleClick = () => {
-        modal.openModal();
+        const toDoListBoxProps = {
+            value: 'test',
+        };
+
+        dialog.openDialog('modal', <ToDoListBox {...toDoListBoxProps} />);
     };
 
     return (
