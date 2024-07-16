@@ -10,11 +10,11 @@ class DialogService {
       this.rootsContainer = document.getElementById('dialogs') as HTMLDivElement;
   }
 
-  public openDialog(dialogType: 'modal' | 'drawer', children: ReactNode) {
+  public openDialog(children: ReactNode) {
       this.handleRootsContainer();
 
       const rootElement = this.createDialogContainer();
-      this.renderDialog(rootElement, dialogType, children);
+      this.renderDialog(rootElement, children);
 
       this.dialogStack++;
   }
@@ -41,11 +41,11 @@ class DialogService {
       this.rootsContainer.removeChild(rootElement);
   }
 
-  private renderDialog(rootElement: HTMLDivElement, dialogType: 'modal' | 'drawer', children: ReactNode) {
+  private renderDialog(rootElement: HTMLDivElement, children: ReactNode) {
       const root = createRoot(rootElement);
 
       root.render(
-          <Modal root={root} id={this.dialogStack}>
+          <Modal root={root}>
               {children}
           </Modal>);
   }

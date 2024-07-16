@@ -2,7 +2,7 @@ import { Root } from 'react-dom/client';
 import React, { MutableRefObject, ReactNode, useCallback, useRef } from 'react';
 import { dialog } from '../../infrastructure/services/dialogService';
 
-export const Modal = ({ children, id, root }: { children: ReactNode, id: number, root: Root }) => {
+export const Modal = ({ children, root }: { children: ReactNode, root: Root }) => {
     const dialogElementRef = useRef() as MutableRefObject<HTMLDialogElement>;
 
     const dialogRef = useCallback((dialog: HTMLDialogElement) => {
