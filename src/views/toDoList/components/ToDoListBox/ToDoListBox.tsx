@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './toDoListBox.module.scss';
 import { ModalStylesType } from '../../../../infrastructure/services/model';
 import { PRIORITIES } from './formData';
+import { TooltipWrapper } from '../../../../components/tooltipWrapper/TooltipWrapper';
 
 interface ToDoListBoxType {
   modalStyles: ModalStylesType;
@@ -18,6 +19,10 @@ export const ToDoListBox = ({ value, modalStyles }: ToDoListBoxType) => {
             <div className={modalStyles.contentStyles}>
                 <div>
                     {'Priority: '}
+                    <TooltipWrapper
+                        ParentComponent={<div>{'test'}</div>}
+                        TooltipComponent={<div>{'o, działa'}</div>}
+                    />
                     <div className={styles.priorities}>
                         {PRIORITIES.map(priority => (
                             <>
