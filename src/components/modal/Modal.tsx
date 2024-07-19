@@ -1,8 +1,16 @@
 import { Root } from 'react-dom/client';
-import React, { MutableRefObject, ReactNode, useCallback, useRef } from 'react';
+import React, { MutableRefObject, useCallback, useRef } from 'react';
+import styles from './modal.module.scss';
 import { dialog } from '../../infrastructure/services/dialogService';
+import { CloseIcon } from '../closeIcon/CloseIcon';
+import { ModalChildrenType } from '../../infrastructure/services/model';
 
-export const Modal = ({ children, root }: { children: ReactNode, root: Root }) => {
+interface ModalType {
+  children: ModalChildrenType,
+  root: Root
+}
+
+export const Modal = ({ children, root }: ModalType) => {
     const dialogElementRef = useRef() as MutableRefObject<HTMLDialogElement>;
 
     const dialogRef = useCallback((dialog: HTMLDialogElement) => {
@@ -26,9 +34,12 @@ export const Modal = ({ children, root }: { children: ReactNode, root: Root }) =
     };
 
     return (
-        <dialog ref={dialogRef} onKeyDown={handleEscClose}>
-            <button onClick={handleClose}>{'Zamknij modal'}</button>
-            {children}
+        <dialog ref={dialogRef} className={styles.modal} onKeyDown={handleEscClose}>
+            <CloseIcon closeAction={handleClose} />
+            {children({
+                headerStyles: styles.header,
+                contentStyles: styles.content,
+            })}
         </dialog>
     );
 };

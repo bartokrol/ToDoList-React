@@ -19,7 +19,7 @@ export const ToDoListPage = () => {
             value: 'test',
         };
 
-        dialog.openDialog(<ToDoListBox {...toDoListBoxProps} />);
+        dialog.openDialog((modalStyles) => <ToDoListBox {...toDoListBoxProps} modalStyles={modalStyles} />);
     };
 
     return (

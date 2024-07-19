@@ -1,0 +1,16 @@
+.modal {
+  display: grid;
+  grid-template-areas:
+    'header close'
+    'content content';
+  grid-gap: .5rem;
+}
+
+.header {
+  grid-area: header;
+  text-transform: uppercase;
+}
+
+.content {
+  grid-area: content;
+}

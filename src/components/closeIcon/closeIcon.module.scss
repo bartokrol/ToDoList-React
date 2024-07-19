@@ -1,0 +1,25 @@
+.closeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  justify-self: end;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+  opacity: .5;
+  grid-area: close;
+
+  &:hover {
+    scale: 1.1;
+    opacity: 1;
+  }
+}
+
+.close {
+  width: 2rem;
+  height: 2rem;
+}

@@ -9,7 +9,7 @@ export const HeaderFlags = () => {
     };
 
     return (
-        <div>
+        <div className={styles.flagsContainer}>
             <button className={styles.flagButton} onClick={() => handleLanguageChange('pl')}>
                 <img className={styles.flag} src={plIcon} alt={'PL flag'} />
             </button>

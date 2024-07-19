@@ -1,6 +1,6 @@
 import { createRoot, Root } from 'react-dom/client';
 import { Modal } from '../../components/modal/Modal';
-import { ReactNode } from 'react';
+import { ModalChildrenType } from './model';
 
 class DialogService {
   private dialogStack = 0;
@@ -10,7 +10,7 @@ class DialogService {
       this.rootsContainer = document.getElementById('dialogs') as HTMLDivElement;
   }
 
-  public openDialog(children: ReactNode) {
+  public openDialog(children: ModalChildrenType) {
       this.handleRootsContainer();
 
       const rootElement = this.createDialogContainer();
@@ -41,12 +41,12 @@ class DialogService {
       this.rootsContainer.removeChild(rootElement);
   }
 
-  private renderDialog(rootElement: HTMLDivElement, children: ReactNode) {
+  private renderDialog(rootElement: HTMLDivElement, children: ModalChildrenType) {
       const root = createRoot(rootElement);
 
       root.render(
           <Modal root={root}>
-              {children}
+              {(styles) => children(styles)}
           </Modal>);
   }
 

@@ -1,9 +1,20 @@
 import React from 'react';
+import { ModalStylesType } from '../../../../infrastructure/services/model';
 
-export const ToDoListBox = ({ value }: { value: string }) => {
+interface ToDoListBoxType {
+  modalStyles: ModalStylesType;
+  value: string;
+}
+
+export const ToDoListBox = ({ value, modalStyles }: ToDoListBoxType) => {
     console.log(value);
+    console.log(modalStyles);
 
     return (
-        <div>{value}</div>
+        <>
+            <h1 className={modalStyles.headerStyles}>{'Header'}</h1>
+            <div className={modalStyles.contentStyles}>{value}</div>
+        </>
+
     );
 };

@@ -24,34 +24,8 @@
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 2rem;
+  grid-template-areas: 'flags close';
   padding: .2rem;
-}
-
-.closeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  width: 2rem;
-  height: 2rem;
-  justify-self: end;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  transition: all .2s;
-  opacity: .5;
-  grid-column: 2;
-
-  &:hover {
-    scale: 1.1;
-    opacity: 1;
-  }
-}
-
-.close {
-  width: 2rem;
-  height: 2rem;
 }
 
 .content {

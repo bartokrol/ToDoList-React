@@ -1,7 +1,7 @@
 import styles from './drawer.module.scss';
 import { useDrawerState } from './hooks/useDrawerState';
 import { DrawerType } from './index.model';
-import closeIcon from '../../public/svgs/close_icon.svg';
+import { CloseIcon } from '../closeIcon/CloseIcon';
 
 export const Drawer = ({ isOpen, children, dialogRef, closeAction }: DrawerType) => {
     const isInitialized = useDrawerState({ isOpen, dialogRef, closeAction });
@@ -11,9 +11,7 @@ export const Drawer = ({ isOpen, children, dialogRef, closeAction }: DrawerType)
             <div className={styles.wrapper}>
                 <div className={styles.header}>
                     {children.header}
-                    <button className={styles.closeButton} onClick={closeAction}>
-                        <img className={styles.close} src={closeIcon} alt={'Close Button'} />
-                    </button>
+                    <CloseIcon closeAction={closeAction} />
                 </div>
                 <div className={styles.content}>
                     {children.content}
