@@ -1,0 +1,38 @@
+.priorities {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.label {
+  user-select: none;
+}
+
+@mixin checked-priority($color) {
+  &:checked {
+    border: 1px solid $color;
+    background-color: $color;
+  }
+}
+
+.radio {
+  appearance: none;
+  width: 100%;
+  height: 1rem;
+  border: 1px solid black;
+  border-radius: .5rem;
+
+  &[data-css-priority='high'] {
+    @include checked-priority(red);
+
+  }
+
+  &[data-css-priority='normal'] {
+    @include checked-priority(green);
+  }
+
+  &[data-css-priority='low'] {
+    @include checked-priority(blue);
+  }
+}
